@@ -23,12 +23,12 @@ namespace Demo
 		public async Task Write(byte[] data)
 		{
 			DataCount += data.Length;
-			await Task.Delay(data.Length * 2);
+			await Task.Delay((int)(data.Length * 1.5));
 		}
 
 		public async Task<bool> Verify()
 		{
-			await Task.Delay(DataCount * 2);
+			await Task.Delay(DataCount);
 			return true;
 		}
 	}
